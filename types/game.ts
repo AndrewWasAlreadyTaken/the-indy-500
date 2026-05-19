@@ -16,8 +16,8 @@ export interface ScoreState {
 
 export const DEFAULT_SCORE_STATE: ScoreState = {
   players: [
-    { id: "player1", name: "Player 1", score: 0 },
-    { id: "player2", name: "Player 2", score: 0 },
+    { id: "player1", name: "Csocsesz", score: 0 },
+    { id: "player2", name: "Hege", score: 0 },
   ],
   updatedAt: Date.now(),
 };

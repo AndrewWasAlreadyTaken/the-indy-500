@@ -32,7 +32,14 @@ export const localScoreStorage: ScoreStorage = {
       const raw = window.localStorage.getItem(STORAGE_KEY);
       if (!raw) return null;
       const parsed: unknown = JSON.parse(raw);
-      return isValidScoreState(parsed) ? parsed : null;
+      if (!isValidScoreState(parsed)) return null;
+      return {
+        ...parsed,
+        players: [
+          { ...parsed.players[0], name: DEFAULT_SCORE_STATE.players[0].name },
+          { ...parsed.players[1], name: DEFAULT_SCORE_STATE.players[1].name },
+        ],
+      };
     } catch {
       return null;
     }
